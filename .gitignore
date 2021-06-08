@@ -1,0 +1,8 @@
+*.iml
+.idea
+build/
+allure-results/
+.allure
+debug.log
+# mvn target folder
+target/

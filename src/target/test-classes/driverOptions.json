@@ -1,0 +1,55 @@
+{
+  "chrome": {
+    "windows": {
+      "args": [
+        "start-fullscreen",
+        "no-sandbox",
+        "disable-infobars",
+        "disable-gpu",
+        "incognito",
+        "window-Size=1920,1080"
+      ],
+      "experimentalOptions": {
+        "excludeSwitches": [
+          "disable-component-update",
+          "disable-popup-blocking",
+          "enable-automation",
+          "useAutomationExtension: false"
+        ],
+        "prefs": {
+          "download.prompt_for_download": false,
+          "download.directory_upgrade": true,
+          "safebrowsing.enabled": true
+        }
+      }
+    },
+    "linux": {
+      "args": [
+        "window-size=1920,1080",
+        "no-sandbox",
+        "disable-gpu",
+        "disable-infobars",
+        "incognito"
+      ],
+      "experimentalOptions": {
+        "excludeSwitches": [
+          "disable-component-update",
+          "disable-popup-blocking"
+        ],
+        "prefs": {
+          "download.prompt_for_download": false,
+          "download.directory_upgrade": true,
+          "safebrowsing.enabled": true
+        }
+      }
+    }
+  },
+  "firefox": {
+    "windows": {
+      "args": [
+        "--kiosk",
+        "-no-remote"
+      ]
+    }
+  }
+}
