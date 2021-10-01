@@ -29,7 +29,7 @@ public class DriverFactory implements IDriverFactory {
     private static final Logger LOG = Logger.getInstance();
     private static final Browser BROWSER = Browser.getValue(Configuration.getInstance().getProperty("browser"));
     public static final Long ELEMENT_TIMEOUT = Configuration.getInstance().getTimeout("timeout.element.wait");
-    private static final String REMOTE_WD = Configuration.getInstance().getProperty("remote.wd");
+    private static final boolean REMOTE_WD = Boolean.parseBoolean(Configuration.getInstance().getProperty("remote.wd"));
     private static final String REMOTE_WD_URL = Configuration.getInstance().getProperty("browser.remote_wd.url");
     private static final String PLATFORM = System.getProperty("os.name").toLowerCase();
 
@@ -41,7 +41,7 @@ public class DriverFactory implements IDriverFactory {
     @Override
     public RemoteWebDriver getDriver() {
         RemoteWebDriver driver;
-        if (REMOTE_WD.equals("true")) {
+        if (REMOTE_WD) {
             driver = getRemoteDriver();
         } else {
             driver = getLocalDriver();
@@ -144,7 +144,6 @@ public class DriverFactory implements IDriverFactory {
         JSONObject experimentalOptions = (JSONObject) options.get("experimentalOptions");
         String[] excludeSwitches = JSONUtils.getStringArray(experimentalOptions, "excludeSwitches");
         chromeOptions.setExperimentalOption("excludeSwitches", excludeSwitches);
-        chromeOptions.setExperimentalOption("useAutomationExtension", false);
 
         return chromeOptions;
     }

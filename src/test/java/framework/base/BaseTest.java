@@ -29,7 +29,7 @@ public abstract class BaseTest {
      */
     @BeforeSuite
     public void beforeSuite() {
-        Localization.getInstance();
+        Localization.getInstance().setLocale(Localization.Locale.RU);
     }
 
     /**

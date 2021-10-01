@@ -1,13 +1,13 @@
 package framework.utils;
 
 import io.qameta.allure.Step;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Класс-утилита для логирования.
  */
 public final class Logger {
-
-    private static final org.apache.log4j.Logger LOG4J = org.apache.log4j.Logger.getLogger(Logger.class);
+    private static final org.apache.logging.log4j.Logger LOG4J = LogManager.getLogger(Logger.class);
     private static Logger instance = null;
 
     private Logger() {
@@ -26,7 +26,7 @@ public final class Logger {
     }
 
     /**
-     * Логирование инфомарции с тегом [DEBUG]
+     * Логирование информации с тегом [DEBUG]
      *
      * @param message сообщение для логирования.
      */
@@ -36,7 +36,7 @@ public final class Logger {
     }
 
     /**
-     * Логирование инфомарции с тегом [INFO]
+     * Логирование информации с тегом [INFO]
      *
      * @param message сообщение для логирования.
      */
@@ -46,7 +46,7 @@ public final class Logger {
     }
 
     /**
-     * Логирование инфомарции с тегом [WARN]
+     * Логирование информации с тегом [WARN]
      *
      * @param message сообщение для логирования.
      */
@@ -56,7 +56,7 @@ public final class Logger {
     }
 
     /**
-     * Логирование инфомарции с тегом [ERROR]
+     * Логирование информации с тегом [ERROR]
      *
      * @param message сообщение для логирования.
      */
@@ -66,7 +66,7 @@ public final class Logger {
     }
 
     /**
-     * Логирование инфомарции с тегом [FATAL].
+     * Логирование информации с тегом [FATAL].
      *
      * @param message   сообщение для логирования.
      * @param throwable исключение, вызвавшее прерывание.

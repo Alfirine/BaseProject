@@ -13,8 +13,7 @@
         "excludeSwitches": [
           "disable-component-update",
           "disable-popup-blocking",
-          "enable-automation",
-          "useAutomationExtension: false"
+          "enable-automation"
         ],
         "prefs": {
           "download.prompt_for_download": false,
